@@ -1,0 +1,20 @@
+function edgesdetection(Ireal,Iscaned)
+figure;
+subplot(2,2,1);
+imshow(Ireal);
+I1=rgb2gray(Ireal);
+title('Original Image');
+subplot(2,2,2);
+BW1 = edge(I1,'Canny');
+BW2 = edge(I1,'Prewitt');
+imshowpair(BW1,BW2);
+title('Detected Edges');
+subplot(2,2,3);
+imshow(Iscaned);
+I2=rgb2gray(Iscaned);
+title('Original Image');
+subplot(2,2,4);
+BW1 = edge(I2,'Canny');
+BW2 = edge(I2,'Prewitt');
+imshowpair(BW1,BW2);
+title('Detected Edges');
